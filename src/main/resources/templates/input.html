@@ -5,7 +5,7 @@
     <title>Homework of Thymeleaf</title>
 </head>
 <body>
-    <h1 th:text="#{content.title}">Thymeleaf課題</h1>
+    <h1 th:text="#{content.title}"></h1>
     <h2 th:text="#{content.input}"></h2>
     <p th:text="#{content.message}"></p>
 
@@ -16,7 +16,7 @@
     <!-- 送信先のURLが/output -->
         <input type="text" name="previous">
         <!-- inputタグのname属性は送信データに名前を付けている、ここではval -->
-        <button type="submit">送信</button>
+        <button type="submit" th:text="#{content.postmessage}"></button>
     </form>
 </body>
 </html>
