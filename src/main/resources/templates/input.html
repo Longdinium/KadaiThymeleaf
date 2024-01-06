@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- まず入力用のページを作っていく -->
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
@@ -10,11 +9,12 @@
     <h2 th:text="#{content.input}"></h2>
     <p th:text="#{content.message}"></p>
 
-    <p th:unless="${previous != null}" th:text="'前回入力された値は「' + ${previous} + '」でした。'"></p>
+    <!--    <p th:text="${previous} = null ? '' : '前回入力された値は「' + ${previous} + '」でした。'"></p>  -->
+    <p th:if="${previous} neq null" th:text="'前回入力された値は「' + ${previous} + '」でした。'">th:if</p>
 
     <form method="post" action="/output">
     <!-- 送信先のURLが/output -->
-        <input type="text" name="val">
+        <input type="text" name="previous">
         <!-- inputタグのname属性は送信データに名前を付けている、ここではval -->
         <button type="submit">送信</button>
     </form>
