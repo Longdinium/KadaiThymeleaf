@@ -10,7 +10,7 @@
     <p th:text="#{content.message}"></p>
 
     <!--    <p th:text="${previous} = null ? '' : '前回入力された値は「' + ${previous} + '」でした。'"></p>  -->
-    <p th:if="${previous} neq null" th:text="'前回入力された値は「' + ${previous} + '」でした。'">th:if</p>
+    <p th:if="${param.previous} neq null" th:text="'前回入力された値は「' + ${param.previous[0]} + '」でした。'">th:if</p>
 
     <form method="post" action="/output">
     <!-- 送信先のURLが/output -->

@@ -7,7 +7,7 @@
 <body>
     <h1 th:text="#{content.title}"></h1>
     <h2 th:text="#{content.output}"></h2>
-    <p th:text="'入力された値は「' + ${param.previous[0]} + '」です。'"></p>
-    <p><a th:href="@{/input(previous=${param.previous[0]})}" th:text="#{content.backmessage}"></a></p>
+    <p th:text="'入力された値は「' + ${previous} + '」です。'"></p>
+    <p><a th:href="@{/input(previous=${previous})}" th:text="#{content.backmessage}"></a></p>
 </body>
 </html>
